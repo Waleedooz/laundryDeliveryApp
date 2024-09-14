@@ -1,3 +1,5 @@
+import 'package:laundry_app/presentation/my_order_page/my_order_page.dart';
+
 import '../cloth_fold_screen/cloth_fold_screen.dart';
 import '../dry_clean_screen/dry_clean_screen.dart';
 import '../home_page_container_page/widgets/sliderbanner_item_widget.dart';
@@ -118,72 +120,13 @@ List serviceClass = [
           ),
           Padding(
             padding: getPadding(left: 16, right: 16),
-            child: Text("lbl_services".tr,
+            child: Text("lbl_my_order".tr,
                 overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.left,
                 style: AppStyle.txtHeadline),
           ),
-          GridView.builder(
-            itemCount: serviceData.length,
-            padding: getPadding(all: 16),
-            primary: false,
-            shrinkWrap: true,
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                mainAxisExtent: getVerticalSize(179),
-                crossAxisCount: 2,
-                mainAxisSpacing: getHorizontalSize(16),
-                crossAxisSpacing: getHorizontalSize(16)),
-            itemBuilder: (context, index) {
-              Services data = serviceData[index];
-              return GestureDetector(
-                onTap: (){
-Get.to(serviceClass[index]);
-                },
-                child: Container(
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(getHorizontalSize(16)),
-                      image: DecorationImage(
-                          image: AssetImage(data.bgImage!), fit: BoxFit.fill)),
-                  child: Padding(
-                    padding: getPadding(top: 16,left: 16),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: ColorConstant.whiteA700,
-                          ),
-                          child: CustomImageView(
-                            svgPath: data.icon!,
-                            margin: getMargin(all: 16),
-                          ),
-                        ),
-                        SizedBox(height: getVerticalSize(18),),
-                        Text(
-                          data.title!,
-                          overflow: TextOverflow.ellipsis,
-                          textAlign: TextAlign.left,
-                          style: AppStyle.txtSFProDisplayBold16,
-                        ),
-                        SizedBox(height: getVerticalSize(6),),
-                        Padding(
-                          padding: getPadding(right: 52),
-                          child: Text(
-                            data.subtitle!,
-                            maxLines: null,
-                            textAlign: TextAlign.left,
-                            style: AppStyle.txtFootnote,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              );
-            },
-          )
-
+       
+        MyOrderPage()
           // SizedBox(
           //     width: double.maxFinite,
           //     child: Container(

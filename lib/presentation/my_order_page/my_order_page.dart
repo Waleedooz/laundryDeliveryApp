@@ -35,14 +35,7 @@ class MyOrderPage extends StatelessWidget {
                                 mainAxisAlignment:
                                 MainAxisAlignment.end,
                                 children: [
-                                  Padding(
-                                      padding: getPadding(top: 6),
-                                      child: Text("lbl_my_order2".tr,
-                                          overflow:
-                                          TextOverflow.ellipsis,
-                                          textAlign: TextAlign.left,
-                                          style: AppStyle
-                                              .txtSFProDisplayBold28))
+                              
                                 ]))),
                     Container(
                         height: getVerticalSize(693),
